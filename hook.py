@@ -7,6 +7,6 @@ address = None
 
 
 async def initialize(app, services):
-    Popen(['haproxy', '-f', 'plugins/ssl/templates/haproxy.conf'])
+    Popen(['haproxy', '-q', '-f', 'plugins/ssl/templates/haproxy.conf'])
     logging.debug('Serving at https://127.0.0.1:443')
 
