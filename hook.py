@@ -1,7 +1,7 @@
 from subprocess import Popen
 
-name = 'Proxy'
-description = 'Spawn a reverse proxy service in front of the Caldera app'
+name = 'SSL'
+description = 'Run an SSL proxy in front of CALDERA'
 address = None
 
 
