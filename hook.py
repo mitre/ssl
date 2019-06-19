@@ -1,3 +1,4 @@
+import logging
 from subprocess import Popen
 
 name = 'SSL'
@@ -6,7 +7,6 @@ address = None
 
 
 async def initialize(app, services):
-    proxy_args = ['haproxy', '-V', '-f', 'plugins/proxy/templates/haproxy.conf']
-    return Popen(proxy_args)
-
+    Popen(['haproxy', '-V', '-f', 'plugins/ssl/templates/haproxy.conf'])
+    logging.debug('Serving CALDERA at https://127.0.0.1:443')
 
