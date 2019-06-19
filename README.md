@@ -1,4 +1,4 @@
-# CALDERA plugin: Proxy
+# CALDERA plugin: SSL
 
 This plugin contains logic to run a reverse proxy in front of the CALDERA application.
 
