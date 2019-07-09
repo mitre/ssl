@@ -1,10 +1,5 @@
 # CALDERA plugin: SSL
 
-This plugin contains logic to run a reverse proxy in front of the CALDERA application.
+A plugin swapping CALDERA from HTTP to HTTPS.
 
-The Proxy plugin provides TLS/SSL termination and reverse proxying service for the 54ndc47 agents/web services. The 
-proxying service will ensure that 54ndc47 agents render correctly to the reverse proxy external IP and port.
-
-## Requirements
-
-HAProxy must be installed on the same host CALDERA is running on.
+[Read the full docs](https://github.com/mitre/caldera/wiki/Plugin:-ssl)
