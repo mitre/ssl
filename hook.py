@@ -9,4 +9,11 @@ address = None
 async def initialize(app, services):
     Popen(['haproxy', '-q', '-f', 'plugins/ssl/templates/haproxy.conf'])
     logging.debug('Serving at https://127.0.0.1:443')
+    config = open('plugins/ssl/templates/haproxy.conf', 'r').read()
+    path = config[config.index('crt') + 4:config.index('.pem') + 4]
+    if 'rB4lWjTs7o0tFuB0bgqt' in open(path, 'r').read():
+        logging.debug('Warning: Using insecure ssl private key and certificate. Consider generating your own to improve security. Documentation found here: https://github.com/mitre/caldera/wiki/Plugin:-ssl')
+
+
+
 
