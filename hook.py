@@ -3,7 +3,7 @@ from pathlib import Path
 from subprocess import Popen
 
 name = 'SSL'
-description = 'Run an SSL proxy in front of CALDERA'
+description = 'Run an SSL proxy in front of the server'
 address = None
 
 
