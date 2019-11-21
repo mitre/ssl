@@ -8,7 +8,7 @@ address = None
 enabled = False
 
 
-async def initialize(app, services):
+async def enable(app, services):
     Popen(['haproxy', '-q', '-f', 'plugins/ssl/templates/haproxy.conf'])
     logging.debug('Serving at https://127.0.0.1:443')
     cert = Path("plugins/ssl/conf/insecure_certificate.pem")
