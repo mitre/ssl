@@ -5,6 +5,7 @@ from subprocess import Popen
 name = 'SSL'
 description = 'Run an SSL proxy in front of the server'
 address = None
+directory = None
 
 
 async def enable(app, services):
