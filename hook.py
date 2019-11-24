@@ -7,7 +7,7 @@ description = 'Run an SSL proxy in front of the server'
 address = None
 
 
-async def enable(app, services):
+async def enable(services):
     Popen(['haproxy', '-q', '-f', 'plugins/ssl/templates/haproxy.conf'])
     logging.debug('Serving at https://127.0.0.1:443')
     cert = Path("plugins/ssl/conf/insecure_certificate.pem")
