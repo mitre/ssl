@@ -2,7 +2,7 @@
 
 A plugin swapping CALDERA from HTTP to HTTPS.
 
-> This plugin only works if CALDERA is running on a Linux or MacOS machine. It requires HaProxy (>= 1.8) to be installed prior to using it.
+> This plugin only works if CALDERA is running on a Linux or MacOS machine. It requires HaProxy (>= 1.8) to be installed prior to using it. You can install haproxy using `brew install haproxy` (MacOS) or `sudo apt-get install haproxy` (Linux)
 
 When this plugin has been loaded, CALDERA will start the HAProxy service on the machine and then serve CALDERA at hxxps://[YOUR_IP]:8443, instead of the normal hxxp://[YOUR_IP]:8888.
 
