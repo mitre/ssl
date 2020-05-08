@@ -8,6 +8,8 @@ When this plugin has been loaded, CALDERA will start the HAProxy service on the 
 
 CALDERA will **only** be available at https://[YOUR_IP]:8443 when using this plugin. All deployed agents should use the correct address to connect to CALDERA. 
 
+If you would like to modify any of the proxy details, you can do so by going into the templates/haproxy.conf file, modifying the contents and restarting CALDERA.
+
 **Warning:** This plugin uses a default self-signed ssl certificate and key which is insecure.
 It is highly recommended that you generate your own before using the plugin to increase the safety of the system.
 Find documentation to do so in the full docs below. 
