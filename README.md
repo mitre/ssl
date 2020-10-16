@@ -1,6 +1,6 @@
 # CALDERA plugin: SSL
 
-This plygin switches CALDERA from using HTTP to HTTPS.
+This plugin switches CALDERA from using HTTP to HTTPS.
 
 ## Overview
 
@@ -16,5 +16,5 @@ If you would like to modify any of the proxy details, you can do so by going int
 
 > install haproxy using `brew install haproxy` (MacOS) or `sudo apt-get install haproxy` (Linux)
 
-**Warning:** This plugin uses a default self-signed ssl certificate and key which is insecure.
+**Warning:** This plugin uses a default self-signed SSL certificate and key which is insecure.
 It is highly recommended that you generate your own before using the plugin to increase the safety of the system.
