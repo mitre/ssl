@@ -8,10 +8,14 @@ address = None
 
 
 async def enable(services):
-    Popen(['haproxy', '-q', '-f', 'plugins/ssl/templates/haproxy.conf'])
+    haproxy_conf = Path('plugins/ssl/templates/haproxy.conf')
+    user_conf = Path('plugins/ssl/conf/haproxy.conf')
+    if user_conf.is_file():
+        haproxy_conf = user_conf
+    Popen(['haproxy', '-q', '-f', haproxy_conf])
     logging.debug('Serving at https://127.0.0.1:8443')
     cert = Path("plugins/ssl/conf/insecure_certificate.pem")
     if cert.is_file():
-        logging.warn('Found insecure ssl private key and certificate. Consider generating your own and removing'
+        logging.warn('Found insecure SSL private key and certificate. Consider generating your own and removing'
                      ' the insecure certificate from the conf directory to improve security. Documentation found '
                      'here: https://github.com/mitre/caldera/wiki/Plugin:-ssl')
