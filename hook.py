@@ -11,7 +11,6 @@ address = ''
 async def _check_cert():
     await asyncio.sleep(5)
     default_cert = ''
-    server_cert = ''
     server_cert = get_server_certificate(('127.0.0.1', 8443))
     with open(Path('plugins/ssl/conf/insecure_certificate.pem'), 'r') as f:
         for line in f:
