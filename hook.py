@@ -14,7 +14,11 @@ async def _check_cert():
     server_cert = ''
     server_cert = get_server_certificate(('127.0.0.1', 8443))
     with open(Path('plugins/ssl/conf/insecure_certificate.pem'), 'r') as f:
-        default_cert = f.read()
+        for line in f:
+            if 'PRIVATE KEY' in line:
+                break
+            default_cert += line
+
     if server_cert == default_cert:
         logging.warn('Insecure SSL private key and certificate in use. Consider generating and using your own '
                     'to improve security. Documentation found '
