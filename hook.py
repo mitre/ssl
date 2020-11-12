@@ -34,6 +34,5 @@ async def enable(services):
     if os.path.isfile(user_conf):
         haproxy_conf = user_conf
     Popen(['haproxy', '-q', '-f', haproxy_conf])
-    logging.debug('Serving at https://0.0.0.0:8443')
     loop = asyncio.get_event_loop()
     loop.create_task(_check_using_default_cert())
