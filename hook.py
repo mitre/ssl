@@ -1,6 +1,6 @@
 import logging
 import asyncio
-from pathlib import Path
+import os.path
 from subprocess import Popen
 from ssl import get_server_certificate
 
@@ -8,28 +8,32 @@ name = 'SSL'
 description = 'Run an SSL proxy in front of the server'
 address = ''
 
-async def _check_cert():
-    await asyncio.sleep(5)
+
+def _read_default_cert():
     default_cert = ''
-    server_cert = get_server_certificate(('127.0.0.1', 8443))
-    with open(Path('plugins/ssl/conf/insecure_certificate.pem'), 'r') as f:
+    with open('plugins/ssl/conf/insecure_certificate.pem', 'r') as f:
         for line in f:
             if 'PRIVATE KEY' in line:
                 break
             default_cert += line
+    return default_cert
 
+
+async def _check_using_default_cert():
+    await asyncio.sleep(5)
+    server_cert = get_server_certificate(('127.0.0.1', 8443))
+    default_cert = _read_default_cert()
     if server_cert == default_cert:
         logging.warn('Insecure SSL private key and certificate in use. Consider generating and using your own '
-                    'to improve security. Documentation found '
-                    'here: https://github.com/mitre/caldera/wiki/Plugin:-ssl')
+                     'to improve security. Please see documentation.')
 
 
 async def enable(services):
-    haproxy_conf = Path('plugins/ssl/templates/haproxy.conf')
-    user_conf = Path('plugins/ssl/conf/haproxy.conf')
-    if user_conf.is_file():
+    haproxy_conf = 'plugins/ssl/templates/haproxy.conf'
+    user_conf = 'plugins/ssl/conf/haproxy.conf'
+    if os.path.isfile(user_conf):
         haproxy_conf = user_conf
     Popen(['haproxy', '-q', '-f', haproxy_conf])
     logging.debug('Serving at https://0.0.0.0:8443')
     loop = asyncio.get_event_loop()
-    loop.create_task(_check_cert())
+    loop.create_task(_check_using_default_cert())
