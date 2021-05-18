@@ -12,3 +12,5 @@
 .logs/*
 !.logs/.gitkeep
 core.db
+conf/haproxy.conf
+conf/certificate.pem

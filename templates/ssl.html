@@ -1,0 +1,16 @@
+<div id="ssl-section" class="section-profile">
+    <div class="row">
+         <div class="topleft duk-icon"><img onclick="removeSection('ssl-section')" src="/gui/img/x.png"></div>
+         <div class="column" style="flex:40%;padding:15px;text-align: left">
+            <h1 style="font-size:70px;margin-top:-20px;">SSL</h1>
+            <h2 style="margin-top:-55px">add HTTPS to CALDERA</h2>
+            <h5>When this plugin has been loaded, CALDERA will start the HAProxy service on the machine and serve CALDERA on all interfaces on port 8443, in addition to the normal http://[YOUR_IP]:8888 (based on the value of the host value in the CALDERA settings).</h5>
+            <p>Follow the <a style="text-decoration: underline;" href="https://localhost:8443/docs/Plugin-library.html#ssl" target="_blank">Setup Instructions</a> after enabling the plugin.</p>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        stream('Ensure you redeploy your agents after enabling SSL for them to run on the new HTTPS service.');
+    });
+</script>
