@@ -1,0 +1,16 @@
+<div id="ssl-section" class="section-profile">
+    <div class="row">
+         <div class="topleft duk-icon"><img onclick="removeSection('ssl-section')" src="/gui/img/x.png"></div>
+         <div class="column" style="flex:40%;padding:15px;text-align: left">
+            <h1 style="font-size:70px;margin-top:-20px;">SSL</h1>
+            <h2 style="margin-top:-55px">add HTTPS to CALDERA</h2>
+            <p>This plugin creates an HTTPS interface for CALDERA, allowing users and agents to securely communicate with the server.</p>
+            <p>See the <a style="text-decoration: underline;" href="/docs/Plugin-library.html#ssl" target="_blank">plugin documentation</a> for setup instructions.</p>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        stream('Ensure you redeploy your agents after enabling SSL for them to run on the new HTTPS service.');
+    });
+</script>
