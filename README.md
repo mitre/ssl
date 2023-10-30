@@ -18,3 +18,4 @@ If you would like to modify any of the proxy details, you can do so by going int
 
 
 **Warning:** This plugin uses a default self-signed ssl certificate and key which is insecure. It is highly recommended that you generate your own before using the plugin to increase the safety of the system. Find documentation to do so in the full CALDERA docs here: http://caldera.readthedocs.io
+If using a self-signed certificate, you may have to update your system preferences to trust the certificate. Additionally, when downloading agents with `curl`, you may have to use the `--insecure` flag to ignore the SSL certificate check for the CALDERA server.
