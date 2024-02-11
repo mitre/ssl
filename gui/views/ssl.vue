@@ -11,7 +11,7 @@ onMounted(() => {
 <template lang="pug">
 .content    
   h2 SSL
-  p Add HTTPS to CALDERA
+  p Add HTTPS to Caldera
 hr
 .content
   p(:class="{ 'has-text-success': isHttps, 'has-text-danger': !isHttps }") You are 
