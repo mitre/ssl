@@ -26,7 +26,7 @@ async def _check_using_default_cert():
     server_cert = get_server_certificate(('127.0.0.1', 8443))
     default_cert = _read_default_cert()
     if server_cert == default_cert:
-        logging.warn('Insecure SSL private key and certificate in use. Consider generating and using your own '
+        logging.warning('Insecure SSL private key and certificate in use. Consider generating and using your own '
                      'to improve security. Please see documentation.')
 
 
