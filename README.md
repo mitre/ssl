@@ -1,4 +1,4 @@
-# MITRE Caldera plugin: SSL
+# Caldera plugin: SSL
 
 This plugin switches Caldera from using HTTP to HTTPS.
 
